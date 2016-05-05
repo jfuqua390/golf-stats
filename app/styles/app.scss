@@ -1,5 +1,32 @@
 @import "yoga";
+@import "variables";
+@import "top-nav";
+@import "footer";
 
 // Uncomment this for working with yoga prototyping
 // http://rtablada.github.io/yoga-sass/#mixin-yoga-prototype
 // @include yoga-prototype();
+
+body {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  margin: 0;
+
+  &:hover {
+    cursor: pointer;
+  }
+}

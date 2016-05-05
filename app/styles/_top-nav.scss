@@ -1,0 +1,48 @@
+.top-nav {
+  width: 100%;
+  background: $brand-green;
+}
+
+.top-nav__row {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: auto;
+  color: $brand-white;
+  font-size: 1.1rem;
+}
+
+.logo {
+  filter: invert(100%);
+}
+
+.top-nav__left {
+  position: relative;
+  margin: 0.5rem 0;
+  display: flex;
+}
+
+.tm {
+  position: absolute;
+  top: 0.2rem;
+  right: -0.7rem;
+  font-size: 0.3rem;
+}
+
+.top-nav__right {
+  position: relative;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 12rem;
+
+  &__link {
+
+  }
+
+  &__separator {
+    color: #d4eed5;
+    font-size: 2rem;
+  }
+}

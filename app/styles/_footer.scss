@@ -1,0 +1,14 @@
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: $brand-green;
+  color: $brand-white;
+}
+
+.footer__row {
+  display: flex;
+  width: 30%;
+  justify-content: center;
+  margin: 1rem auto;
+}
