@@ -1,1 +1,10 @@
+<div class="container">
+  Enter Login Information Below
+  {{#simple-form onsubmit=(action login) as |formValues|}}
+    {{input type="text" placeholder="Email" value=formValues.email}}
+    {{input type="password" placeholder="Password" value=formValues.password}}
+    <button>Submit</button>
+  {{/simple-form}}
+</div>
+
 {{outlet}}
