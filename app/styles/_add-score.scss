@@ -1,0 +1,16 @@
+.add-score__holes {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.add-score__hole {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: calc(100% / 9);
+
+  &__input {
+    width: 60%;
+  }
+}

@@ -2,6 +2,8 @@
 @import "variables";
 @import "top-nav";
 @import "footer";
+@import "home-user";
+@import "add-score";
 
 // Uncomment this for working with yoga prototyping
 // http://rtablada.github.io/yoga-sass/#mixin-yoga-prototype
@@ -17,7 +19,13 @@ ul {
   list-style: none;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
   margin: 0;
 }
 

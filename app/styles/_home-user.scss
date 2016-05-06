@@ -1,0 +1,49 @@
+.container {
+  width: 80%;
+  margin: auto;
+}
+
+.user-info {
+  display: flex;
+  margin: 1rem 0;
+
+  &__details {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin: 0 0.5rem;
+  }
+}
+
+.handicap-score {
+  font-size: 5rem;
+}
+
+.main {
+  width: 100%;
+  display: flex;
+  margin: 2rem 0;
+}
+
+.sidebar {
+  width: 18%;
+}
+
+.scores-box {
+  width: 80%;
+}
+
+.friend-box {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.friend-avatar {
+  width: 30%;
+  margin: 0.1rem;
+
+  &__img {
+    width: 100%;
+  }
+}
