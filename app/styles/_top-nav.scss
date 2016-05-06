@@ -38,11 +38,15 @@
   width: 12rem;
 
   &__link {
-
+    margin: 0.2rem;
   }
 
   &__separator {
     color: #d4eed5;
     font-size: 2rem;
   }
+}
+
+.logout {
+  font-size: .8rem;
 }

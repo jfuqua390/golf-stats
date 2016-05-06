@@ -12,13 +12,25 @@
         {{fa-icon "home"}}
       {{/link-to}}
       <span class="top-nav__right__separator"> | </span>
-      {{#link-to "register" class="top-nav__right__link"}}
+      {{#if session.isAuthenticated}}
+        <div class="top-nav__right__link">
+          {{session.data.authenticated.user.first-name}}
+        </div>
+        <div class="top-nav__right__link">
+          {{session.data.authenticated.user.last-name}}
+        </div>
+        <div class="top-nav__right__link">
+          {{#link-to "logout" class="logout"}}Logout{{/link-to}}
+        </div>
+      {{else}}
+        {{#link-to "register" class="top-nav__right__link"}}
         Register
-      {{/link-to}}
-      <span class="top-nav__right__separator"> | </span>
-      {{#link-to "login" class="top-nav__right__link"}}
+        {{/link-to}}
+        <span class="top-nav__right__separator"> | </span>
+        {{#link-to "login" class="top-nav__right__link"}}
         Login
-      {{/link-to}}
+        {{/link-to}}
+      {{/if}}
     </div>
   </div>
 </div>
