@@ -24,9 +24,11 @@ export default Ember.Controller.extend({
       { hole17: attrs.score17 },
       { hole18: attrs.score18 },
     ];
-    console.log(attrs)
     const score = this.store.createRecord('score', {
       holes: holes,
+      totalPutts: attrs.numputts,
+      gir: attrs.gir,
+      fairwaysHit: attrs.fairwayshit,
     });
     score.save();
   },

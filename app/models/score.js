@@ -5,9 +5,9 @@ import { belongsTo } from 'ember-data/relationships';
 
 export default Model.extend({
   holes: attr(),
-  numputts: attr(),
+  totalPutts: attr(),
   gir: attr(),
-  fairwayshit: attr(),
+  fairwaysHit: attr(),
 
   golfer: belongsTo(`golfer`),
 });

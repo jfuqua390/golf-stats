@@ -75,6 +75,12 @@
       {{input class="add-score__hole__input" placeholder="Score" id="hole18" value=formValues.score18}}
     </li>
   </ul>
+<div class="add-score__options">
+  <h5 class="add-score__optionals__title">Optional Statistics:</h5>
+  {{input class="add-score__optionals" placeholder="Number of Putts" value=formValues.numputts}}
+  {{input class="add-score__optionals" placeholder="Greens in Regulation" value=formValues.gir}}
+  {{input class="add-score__optionals" placeholder="Fairways Hit" value=formValues.fairwayshit}}
+</div>
   <button>Submit Score</button>
   {{/simple-form}}
 </div>

@@ -13,6 +13,7 @@ Router.map(function() {
   this.route('home', function() {
     this.route('add');
   });
+  this.route('history');
 });
 
 export default Router;
