@@ -16,6 +16,8 @@ Router.map(function() {
   });
   this.route('history');
   this.route('editprofile');
+  this.route('addcourse');
+  this.route('courses');
 });
 
 export default Router;

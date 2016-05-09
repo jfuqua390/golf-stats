@@ -1,0 +1,91 @@
+
+<div class="add-score-container">
+  {{#link-to "home"}}Return Home{{/link-to}}
+  {{#simple-form onsubmit=(action addCourse) as |formValues|}}
+  <ul class="add-score__holes">
+    <li class="add-score__hole">
+      <label for="hole1" class="hole-label">1</label>
+      {{input class="add-score__hole__input" placeholder="Par" id="hole1" value=formValues.score1}}
+    </li>
+    <li class="add-score__hole">
+      <label for="hole2" class="hole-label">2</label>
+      {{input class="add-score__hole__input" placeholder="Par" id="hole2" value=formValues.score2}}
+    </li>
+    <li class="add-score__hole">
+      <label for="hole3" class="hole-label">3</label>
+      {{input class="add-score__hole__input" placeholder="Par" id="hole3" value=formValues.score3}}
+    </li>
+    <li class="add-score__hole">
+      <label for="hole4" class="hole-label">4</label>
+      {{input class="add-score__hole__input" placeholder="Par" id="hole4" value=formValues.score4}}
+    </li>
+    <li class="add-score__hole">
+      <label for="hole5" class="hole-label">5</label>
+      {{input class="add-score__hole__input" placeholder="Par" id="hole5" value=formValues.score5}}
+    </li>
+    <li class="add-score__hole">
+      <label for="hole6" class="hole-label">6</label>
+      {{input class="add-score__hole__input" placeholder="Par" id="hole6" value=formValues.score6}}
+    </li>
+    <li class="add-score__hole">
+      <label for="hole7" class="hole-label">7</label>
+      {{input class="add-score__hole__input" placeholder="Par" id="hole7" value=formValues.score7}}
+    </li>
+    <li class="add-score__hole">
+      <label for="hole8" class="hole-label">8</label>
+      {{input class="add-score__hole__input" placeholder="Par" id="hole8" value=formValues.score8}}
+    </li>
+    <li class="add-score__hole">
+      <label for="hole9" class="hole-label">9</label>
+      {{input class="add-score__hole__input" placeholder="Par" id="hole9" value=formValues.score9}}
+    </li>
+    <li class="add-score__hole">
+      <label for="hole10" class="hole-label">10</label>
+      {{input class="add-score__hole__input" placeholder="Par" id="hole10" value=formValues.score10}}
+    </li>
+    <li class="add-score__hole">
+      <label for="hole11" class="hole-label">11</label>
+      {{input class="add-score__hole__input" placeholder="Par" id="hole11" value=formValues.score11}}
+    </li>
+    <li class="add-score__hole">
+      <label for="hole12" class="hole-label">12</label>
+      {{input class="add-score__hole__input" placeholder="Par" id="hole12" value=formValues.score12}}
+    </li>
+    <li class="add-score__hole">
+      <label for="hole13" class="hole-label">13</label>
+      {{input class="add-score__hole__input" placeholder="Par" id="hole13" value=formValues.score13}}
+    </li>
+    <li class="add-score__hole">
+      <label for="hole14" class="hole-label">14</label>
+      {{input class="add-score__hole__input" placeholder="Par" id="hole14" value=formValues.score14}}
+    </li>
+    <li class="add-score__hole">
+      <label for="hole15" class="hole-label">15</label>
+      {{input class="add-score__hole__input" placeholder="Par" id="hole15" value=formValues.score15}}
+    </li>
+    <li class="add-score__hole">
+      <label for="hole16" class="hole-label">16</label>
+      {{input class="add-score__hole__input" placeholder="Par" id="hole16" value=formValues.score16}}
+    </li>
+    <li class="add-score__hole">
+      <label for="hole17" class="hole-label">17</label>
+      {{input class="add-score__hole__input" placeholder="Par" id="hole17" value=formValues.score17}}
+    </li>
+    <li class="add-score__hole">
+      <label for="hole18" class="hole-label">18</label>
+      {{input class="add-score__hole__input" placeholder="Par" id="hole18" value=formValues.score18}}
+    </li>
+  </ul>
+<div class="add-score__options">
+  <h5 class="add-score__optionals__title">Additional Information:</h5>
+  {{input class="add-score__optionals" placeholder="Name of Course" value=formValues.name}}
+  {{input class="add-score__optionals" placeholder="Tee Box Color" value=formValues.teecolor}}
+  {{input class="add-score__optionals" placeholder="Rating" value=formValues.rating}}
+  {{input class="add-score__optionals" placeholder="Slope" value=formValues.slope}}
+  {{input class="add-score__otpionals" placeholder="Address" value=formValues.address}}
+</div>
+  <button>Submit Course</button>
+  {{/simple-form}}
+</div>
+
+{{outlet}}

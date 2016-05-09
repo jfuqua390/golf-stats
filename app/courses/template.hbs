@@ -1,0 +1,13 @@
+<div class="container">
+  {{log model}}
+  {{#each model as |course|}}
+    {{course.name}}
+    Rating: {{course.rating}}
+    Slope: {{course.slope}}
+    {{#each course.holes as |hole|}}
+      {{hole.holenumber}}
+      {{hole.par}}
+    {{/each}}
+  {{/each}}
+</div>
+{{outlet}}
