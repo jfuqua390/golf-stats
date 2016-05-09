@@ -1,22 +1,31 @@
-History of Scores!
 
 <div class="container">
   <ul class="scores">
     {{#each model as |score|}}
     <li class="score-item">
+      <button class="score-delete-button"{{action deleteScore}}>X</button>
       <div class="score-item__title">
         <div class="score-item__title__totalscore">
-          Total Score: {{sum-property score.holes "holescore"}}
+          {{sum-property score.holes "holescore"}}
         </div>
         <div class="score-item__title__optionalstats">
           <div class="optionalstats__item">
-            Fairways Hit {{score.fairwaysHit}}
+            <div class="optionalstats__item__title">
+              Fairways
+            </div>
+            {{score.fairwaysHit}}
           </div>
           <div class="optionalstats__item">
-            GIR {{score.gir}}
+            <div class="optionalstats__item__title">
+              GIR
+            </div>
+            {{score.gir}}
           </div>
           <div class="optionalstats__item">
-            #Putts {{score.totalPutts}}
+            <div class="optionalstats__item__title">
+              #Putts
+            </div>
+            {{score.totalPutts}}
           </div>
         </div>
       </div>
