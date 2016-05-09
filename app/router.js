@@ -12,8 +12,10 @@ Router.map(function() {
 
   this.route('home', function() {
     this.route('add');
+    this.route('editbio');
   });
   this.route('history');
+  this.route('editprofile');
 });
 
 export default Router;

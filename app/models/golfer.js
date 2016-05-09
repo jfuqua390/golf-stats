@@ -8,6 +8,8 @@ export default Model.extend({
   email: attr(),
   username: attr(),
   password: attr(),
+  bio: attr(),
+  avatar: attr(),
 
   friends: hasMany(`golfer`),
   scores: hasMany(`score`),

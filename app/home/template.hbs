@@ -1,17 +1,28 @@
 <div class="container">
   <div class="user-info">
     <div class="avatar">
-      <img src="http://fillmurray.com/200/200" alt="" class="">
+      {{#if model.avatar}}
+        <img src={{model.avatar}} class="avatar-img">
+      {{else}}
+        <img src="http://americanmuslimconsumer.com/wp-content/uploads/2013/09/blank-user.jpg" alt="" class="avatar-img">
+      {{/if}}
     </div>
     <div class="user-info__details">
       <h3 class="handicap-score">6.7</h3>
-      <p class="user-bio">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim nulla optio sed, illo accusantium ducimus? Odit, vitae? Maiores quaerat quibusdam, dignissimos praesentium nobis quasi impedit soluta, rem, magni natus commodi.</p>
+      {{#if model.bio}}
+        {{log 'yo'}}{{model.bio}}
+      {{else}}
+        {{#simple-form onsubmit=(action editBio model) as |temp|}}
+          {{input value=temp.bio placeholder="Write a bit about yourself!" class="user-bio" action="editBio" on="submit"}}
+        {{/simple-form}}
+      {{/if}}
     </div>
   </div>
   <div class="user-options">
     {{#link-to "home.add"}}<button>Add Score</button>{{/link-to}}
     {{#link-to "history"}}<button>View History</button>{{/link-to}}
     <button>Courses Around Me</button>
+    {{#link-to "editprofile"}}<button>Edit Profile</button>{{/link-to}}
   </div>
   {{outlet}}
   <div class="main">
