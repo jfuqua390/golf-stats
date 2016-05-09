@@ -4,6 +4,7 @@
 @import "footer";
 @import "home-user";
 @import "add-score";
+@import "history";
 
 // Uncomment this for working with yoga prototyping
 // http://rtablada.github.io/yoga-sass/#mixin-yoga-prototype
@@ -37,4 +38,10 @@ a {
   &:hover {
     cursor: pointer;
   }
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+  box-shadow: 5px 5px 15px $brand-green, 0px 0px 30px black;
 }

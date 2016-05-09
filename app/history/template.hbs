@@ -1,35 +1,39 @@
 History of Scores!
 
-{{log model}}
-{{#each model as |score|}}
-{{log score.holes}}
-<li class="score-item">
-  {{score.id}}
-  Total Score: {{this.sumScore}}
-  <button {{action sumScores score.holes}}>Add up!</button>
-  <button {{action deleteScore score}}>Delete</button>
-  <ul class="score-item__holes">
-    {{#each score.holes as |hole|}}
-      {{hole.hole1}}
-      {{hole.hole2}}
-      {{hole.hole3}}
-      {{hole.hole4}}
-      {{hole.hole5}}
-      {{hole.hole6}}
-      {{hole.hole7}}
-      {{hole.hole8}}
-      {{hole.hole9}}
-      {{hole.hole10}}
-      {{hole.hole11}}
-      {{hole.hole12}}
-      {{hole.hole13}}
-      {{hole.hole14}}
-      {{hole.hole15}}
-      {{hole.hole16}}
-      {{hole.hole17}}
-      {{hole.hole18}}
+<div class="container">
+  <ul class="scores">
+    {{#each model as |score|}}
+    <li class="score-item">
+      <div class="score-item__title">
+        <div class="score-item__title__totalscore">
+          Total Score: {{sum-property score.holes "holescore"}}
+        </div>
+        <div class="score-item__title__optionalstats">
+          <div class="optionalstats__item">
+            Fairways Hit {{score.fairwaysHit}}
+          </div>
+          <div class="optionalstats__item">
+            GIR {{score.gir}}
+          </div>
+          <div class="optionalstats__item">
+            #Putts {{score.totalPutts}}
+          </div>
+        </div>
+      </div>
+      <ul class="score-item__holes">
+        {{#each score.holes as |hole|}}
+        <li class="score-item__hole">
+          <span class="score-item__hole__number">
+            Hole {{hole.holenumber}}
+          </span>
+          <span class="score-item__hole__score">
+            {{hole.holescore}}
+          </span>
+        </li>
+        {{/each}}
+      </ul>
+    </li>
     {{/each}}
   </ul>
-</li>
-{{/each}}
+</div>
 {{outlet}}

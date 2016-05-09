@@ -1,5 +1,6 @@
 <div class="add-score-container">
   {{#link-to "home"}}Close Modal{{/link-to}}
+  <button{{action clearForm}}>Clear Form</button>
   {{#simple-form onsubmit=(action addScore) as |formValues|}}
   <ul class="add-score__holes">
     <li class="add-score__hole">

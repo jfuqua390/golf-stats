@@ -37,6 +37,6 @@ export default Ember.Controller.extend({
   },
 
   clearForm() {
-    this.transitonToRoute('home');
+    this.transitonToRoute(`home`);
   }
 });
