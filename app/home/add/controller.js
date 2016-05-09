@@ -5,24 +5,24 @@ export default Ember.Controller.extend({
 
   addScore(attrs) {
     const holes = [
-      { hole1: attrs.score1 },
-      { hole2: attrs.score2 },
-      { hole3: attrs.score3 },
-      { hole4: attrs.score4 },
-      { hole5: attrs.score5 },
-      { hole6: attrs.score6 },
-      { hole7: attrs.score7 },
-      { hole8: attrs.score8 },
-      { hole9: attrs.score9 },
-      { hole10: attrs.score10 },
-      { hole11: attrs.score11 },
-      { hole12: attrs.score12 },
-      { hole13: attrs.score13 },
-      { hole14: attrs.score14 },
-      { hole15: attrs.score15 },
-      { hole16: attrs.score16 },
-      { hole17: attrs.score17 },
-      { hole18: attrs.score18 },
+      { holescore: attrs.score1, holenumber: 1 },
+      { holescore: attrs.score2, holenumber: 2 },
+      { holescore: attrs.score3, holenumber: 3 },
+      { holescore: attrs.score4, holenumber: 4 },
+      { holescore: attrs.score5, holenumber: 5 },
+      { holescore: attrs.score6, holenumber: 6 },
+      { holescore: attrs.score7, holenumber: 7 },
+      { holescore: attrs.score8, holenumber: 8 },
+      { holescore: attrs.score9, holenumber: 9 },
+      { holescore: attrs.score10, holenumber: 10 },
+      { holescore: attrs.score11, holenumber: 11 },
+      { holescore: attrs.score12, holenumber: 12 },
+      { holescore: attrs.score13, holenumber: 13 },
+      { holescore: attrs.score14, holenumber: 14 },
+      { holescore: attrs.score15, holenumber: 15 },
+      { holescore: attrs.score16, holenumber: 16 },
+      { holescore: attrs.score17, holenumber: 17 },
+      { holescore: attrs.score18, holenumber: 18 },
     ];
     const score = this.store.createRecord('score', {
       holes: holes,
@@ -30,6 +30,13 @@ export default Ember.Controller.extend({
       gir: attrs.gir,
       fairwaysHit: attrs.fairwayshit,
     });
-    score.save();
+    score.save().then(() => {
+      this.clearForm();
+      window.alert(`Score Saved!`);
+    });
   },
+
+  clearForm() {
+    this.transitonToRoute('home');
+  }
 });
