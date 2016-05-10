@@ -10,7 +10,8 @@ export default Ember.Controller.extend({
     user.save();
   },
 
-  calcHandicap() {
+  calculateHandicap() {
+    console.log('hi')
 
   }
 });

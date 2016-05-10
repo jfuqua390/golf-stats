@@ -1,12 +1,14 @@
-{{log model}}
+<button{{action calcHandicap model model.length}}>Handicap</button>
+<button{{action makeArrayOfDifferentials model}}>Make Array of Diffs</button>
 <div class="container">
   <ul class="scores">
     {{#each model as |score|}}
-    {{log score.course.name}}
     <li class="score-item">
       <div class="score-item__title">
         <div class="score-item__title__totalscore">
+          <button {{action calcHandicapDifferential score.holes "holescore" score.course.rating score.course.slope}}>CalcDifferential</button>
           {{sum-property score.holes "holescore"}}
+
         </div>
         <div class="score-item__title__optionalstats">
           <div class="optionalstats__item">

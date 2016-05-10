@@ -1,11 +1,13 @@
 <div class="container">
   <div class="add-score-container">
     {{#simple-form onsubmit=(action addScore) as |formValues|}}
-    {{#x-select action=(action courseSelected)}}
+    {{#x-select action=(action (mut course))}}
+      {{#x-option}}Select a Course{{/x-option}}
       {{#each (sort-by "name" "teecolor" model) as |course|}}
-        {{#x-option value=course.id}}{{course.name}} / {{course.teecolor}}{{/x-option}}
+        {{#x-option value=course}}{{course.name}} / {{course.teecolor}}{{/x-option}}
       {{/each}}
     {{/x-select}}
+
     <ul class="add-score__holes">
       <li class="add-score__hole">
         <label for="hole1" class="hole-label">1</label>
