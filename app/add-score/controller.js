@@ -3,7 +3,10 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
   session: Ember.inject.service(),
 
+  courseId: 0,
+
   addScore(attrs) {
+    console.log(attrs);
     const holes = [
       { holescore: attrs.score1, holenumber: 1 },
       { holescore: attrs.score2, holenumber: 2 },
@@ -24,11 +27,13 @@ export default Ember.Controller.extend({
       { holescore: attrs.score17, holenumber: 17 },
       { holescore: attrs.score18, holenumber: 18 },
     ];
+    const course = this.get('courseId');
     const score = this.store.createRecord('score', {
       holes: holes,
       totalPutts: attrs.numputts,
       gir: attrs.gir,
       fairwaysHit: attrs.fairwayshit,
+      course: course,
     });
     score.save().then(() => {
       this.clearForm();
@@ -38,5 +43,12 @@ export default Ember.Controller.extend({
 
   clearForm() {
     this.transitonToRoute(`home`);
-  }
+  },
+
+  courseSelected(selection) {
+    console.log(selection)
+    Ember.set(this, `courseId`, selection);
+    const course = this.get('courseId');
+    console.log(course)
+  },
 });

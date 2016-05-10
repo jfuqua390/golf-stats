@@ -1,8 +1,11 @@
 <div class="container">
   <div class="add-score-container">
-    {{#link-to "home"}}Close Modal{{/link-to}}
-    <button{{action clearForm}}>Clear Form</button>
     {{#simple-form onsubmit=(action addScore) as |formValues|}}
+    {{#x-select action=(action courseSelected)}}
+      {{#each (sort-by "name" "teecolor" model) as |course|}}
+        {{#x-option value=course.id}}{{course.name}} / {{course.teecolor}}{{/x-option}}
+      {{/each}}
+    {{/x-select}}
     <ul class="add-score__holes">
       <li class="add-score__hole">
         <label for="hole1" class="hole-label">1</label>
@@ -84,6 +87,7 @@
     {{input class="add-score__optionals" placeholder="Fairways Hit" value=formValues.fairwayshit}}
   </div>
     <button>Submit Score</button>
+    {{#link-to "home"}}Cancel{{/link-to}}
     {{/simple-form}}
   </div>
 </div>
