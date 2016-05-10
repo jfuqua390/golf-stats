@@ -4,7 +4,4 @@ import config from 'golf-stats/config/environment';
 
 export default Ember.Controller.extend({
 
-  deleteScore(score) {
-    score.destroyRecord();
-  },
 });

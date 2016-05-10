@@ -2,6 +2,7 @@
   {{log model}}
   {{#each model as |course|}}
     {{course.name}}
+    Tee: {{course.teecolor}}
     Rating: {{course.rating}}
     Slope: {{course.slope}}
     {{#each course.holes as |hole|}}

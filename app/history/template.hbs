@@ -2,8 +2,8 @@
 <div class="container">
   <ul class="scores">
     {{#each model as |score|}}
+    {{log score.course.name}}
     <li class="score-item">
-      <button class="score-delete-button"{{action deleteScore}}>X</button>
       <div class="score-item__title">
         <div class="score-item__title__totalscore">
           {{sum-property score.holes "holescore"}}
@@ -29,18 +29,26 @@
           </div>
         </div>
       </div>
-      <ul class="score-item__holes">
-        {{#each score.holes as |hole|}}
-        <li class="score-item__hole">
-          <span class="score-item__hole__number">
-            Hole {{hole.holenumber}}
-          </span>
-          <span class="score-item__hole__score">
-            {{hole.holescore}}
-          </span>
-        </li>
-        {{/each}}
-      </ul>
+<div class="score-item__right-container">
+  <div class="score-item__course">
+    Course: {{score.course.name}}
+    Tee: {{score.course.teecolor}}
+    Rating: {{score.course.rating}}
+    Slope: {{score.course.slope}}
+  </div>
+  <ul class="score-item__holes">
+    {{#each score.holes as |hole|}}
+    <li class="score-item__hole">
+      <span class="score-item__hole__number">
+        Hole {{hole.holenumber}}
+      </span>
+      <span class="score-item__hole__score">
+        {{hole.holescore}}
+      </span>
+    </li>
+    {{/each}}
+  </ul>
+</div>
     </li>
     {{/each}}
   </ul>

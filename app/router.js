@@ -10,14 +10,12 @@ Router.map(function() {
   this.route('register');
   this.route('login');
 
-  this.route('home', function() {
-    this.route('add');
-    this.route('editbio');
-  });
+  this.route('home');
   this.route('history');
   this.route('editprofile');
   this.route('addcourse');
   this.route('courses');
+  this.route('add-score');
 });
 
 export default Router;
