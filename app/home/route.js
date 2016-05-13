@@ -5,7 +5,9 @@ export default Ember.Route.extend({
 
   model() {
     const userId = this.get(`session.data.authenticated.userId`);
-
-    return this.store.findRecord(`golfer`, userId);
-  }
+    return Ember.RSVP.hash({
+      golfers: this.store.findAll(`golfer`),
+      golfer: this.store.findRecord(`golfer`, userId),
+    });
+  },
 });

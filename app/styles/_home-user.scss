@@ -46,18 +46,3 @@
 .scores-box {
   width: 80%;
 }
-
-.friend-box {
-  display: flex;
-  width: 100%;
-  flex-wrap: wrap;
-}
-
-.friend-avatar {
-  width: 30%;
-  margin: 0.1rem;
-
-  &__img {
-    width: 100%;
-  }
-}

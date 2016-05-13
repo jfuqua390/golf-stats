@@ -11,8 +11,12 @@ export default Ember.Controller.extend({
     user.save();
   },
 
-  calculateHandicap() {
-    this.get(`handicap`);
-
+  search(term) {
+    console.log(term)
+    const users = this.store.findAll(`golfer`).then((x) => {
+      x.forEach((user) => {
+        console.log(user);
+      });
+    });
   },
 });

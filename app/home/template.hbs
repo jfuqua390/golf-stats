@@ -2,22 +2,22 @@
 <div class="container">
   <div class="user-info">
     <div class="avatar">
-      {{#if model.avatar}}
-        <img src={{model.avatar}} class="avatar-img">
+      {{#if model.golfer.avatar}}
+        <img src={{model.golfer.avatar}} class="avatar-img">
       {{else}}
         <img src="http://americanmuslimconsumer.com/wp-content/uploads/2013/09/blank-user.jpg" alt="" class="avatar-img">
       {{/if}}
     </div>
     <div class="user-info__details">
-      {{#if model.handicap}}
-      <h3 class="handicap-score">{{model.handicap}}</h3>
+      {{#if model.golfer.handicap}}
+      <h3 class="handicap-score">{{model.golfer.handicap}}</h3>
       {{else}}
       <p>Add More Scores to see your handicap!</p>
       {{/if}}
-      {{#if model.bio}}
-        {{log 'yo'}}{{model.bio}}
+      {{#if model.golfer.bio}}
+        {{log 'yo'}}{{model.golfer.bio}}
       {{else}}
-        {{#simple-form onsubmit=(action editBio model) as |temp|}}
+        {{#simple-form onsubmit=(action editBio model.golfer) as |temp|}}
           {{input value=temp.bio placeholder="Write a bit about yourself!" class="user-bio" action="editBio" on="submit"}}
         {{/simple-form}}
       {{/if}}
@@ -29,28 +29,32 @@
     {{#link-to "courses"}}<button>Courses Around Me</button>{{/link-to}}
     {{#link-to "editprofile"}}<button>Edit Profile</button>{{/link-to}}
     {{#link-to "addcourse"}} <button>Add your local course</button>{{/link-to}}
-    <button{{action calculateHandicap on="click"}}>Calc</button>
   </div>
   {{outlet}}
   <div class="main">
     <div class="sidebar">
-      <input type="search" placeholder="Search for a friend...">
+      <form {{action search searchitem on='submit'}}>
+        {{input type="text" placeholder="Search for a user..." value=searchitem}}
+      </form>
       <div class="friend-box">
-        <div class="friend-avatar">
-          <img class="friend-avatar__img" src="http://fillmurray.com/50/50" alt="">
-        </div>
-        <div class="friend-avatar">
-          <img class="friend-avatar__img" src="http://fillmurray.com/50/50" alt="">
-        </div>
-        <div class="friend-avatar">
-          <img class="friend-avatar__img" src="http://fillmurray.com/50/50" alt="">
-        </div>
-        <div class="friend-avatar">
-          <img class="friend-avatar__img" src="http://fillmurray.com/50/50" alt="">
-        </div>
-        <div class="friend-avatar">
-          <img class="friend-avatar__img" src="http://fillmurray.com/50/50" alt="">
-        </div>
+      {{#each model.golfers as |golfer|}}
+        {{log golfer.firstName}}
+        {{#if golfer.avatar}}
+          <div class="friend-box__item">
+            <div class="friend-avatar">
+              <img class="friend-avatar__img" src="{{golfer.avatar}}" alt="">
+            </div>
+            <span class="friend-name">{{golfer.firstName}}{{golfer.lastName}}</span>
+          </div>
+        {{else}}
+          <div class="friend-box__item">
+            <div class="friend-avatar">
+              <img class="friend-avatar__img" src="http://americanmuslimconsumer.com/wp-content/uploads/2013/09/blank-user.jpg" alt="">
+            </div>
+            <span class="friend-name">{{golfer.firstName}}{{golfer.lastName}}</span>
+          </div>
+        {{/if}}
+      {{/each}}
       </div>
     </div>
     <div class="scores-box">
