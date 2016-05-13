@@ -1,14 +1,38 @@
 .friend-box {
   display: flex;
-  width: 100%;
   flex-wrap: wrap;
+  width: 100%;
 }
 
-.friend-avatar {
+.friend-box__item {
+  position: relative;
   width: 30%;
-  margin: 0.1rem;
 
-  &__img {
-    width: 100%;
+  &:before {
+	  display: block;
+    padding-top: 100%;
+    content: '';
   }
+}
+
+.content {
+	position:  absolute;
+  top: 0;
+  right: 0;
+	bottom: 0;
+  left: 0;
+}
+
+.friend-avatar__img {
+  width: 100%;
+}
+
+.friend-name {
+  font-size: 12px;
+  position: absolute;
+  top: 50%;
+}
+
+.picture-avail {
+  color: white;
 }

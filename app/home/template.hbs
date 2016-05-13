@@ -1,4 +1,3 @@
-
 <div class="container">
   <div class="user-info">
     <div class="avatar">
@@ -37,21 +36,26 @@
         {{input type="text" placeholder="Search for a user..." value=searchitem}}
       </form>
       <div class="friend-box">
+
       {{#each model.golfers as |golfer|}}
         {{log golfer.firstName}}
         {{#if golfer.avatar}}
           <div class="friend-box__item">
-            <div class="friend-avatar">
+            {{#link-to "user-profile" golfer.id}}
+            <div class="content">
               <img class="friend-avatar__img" src="{{golfer.avatar}}" alt="">
             </div>
-            <span class="friend-name">{{golfer.firstName}}{{golfer.lastName}}</span>
+            <span class="friend-name picture-avail">{{golfer.firstName}}</span>
+            {{/link-to}}
           </div>
         {{else}}
           <div class="friend-box__item">
-            <div class="friend-avatar">
+            {{#link-to "user-profile" golfer.id}}
+            <div class="content">
               <img class="friend-avatar__img" src="http://americanmuslimconsumer.com/wp-content/uploads/2013/09/blank-user.jpg" alt="">
             </div>
-            <span class="friend-name">{{golfer.firstName}}{{golfer.lastName}}</span>
+            <span class="friend-name">{{golfer.firstName}}</span>
+            {{/link-to}}
           </div>
         {{/if}}
       {{/each}}
