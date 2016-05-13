@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   session: Ember.inject.service(),
+  handicap: Ember.inject.service(`handicap`),
 
 
   editBio(user, temp) {
@@ -11,7 +12,7 @@ export default Ember.Controller.extend({
   },
 
   calculateHandicap() {
-    console.log('hi')
+    this.get(`handicap`);
 
-  }
+  },
 });

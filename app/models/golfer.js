@@ -10,6 +10,7 @@ export default Model.extend({
   password: attr(),
   bio: attr(),
   avatar: attr(),
+  handicap: attr(),
 
   friends: hasMany(`golfer`),
   scores: hasMany(`score`),

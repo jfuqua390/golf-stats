@@ -2,11 +2,10 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   session: Ember.inject.service(),
+  handicap: Ember.inject.service(),
 
-  course: undefined,
 
   addScore(attrs) {
-    console.log(attrs);
     const holes = [
       { holescore: attrs.score1, holenumber: 1 },
       { holescore: attrs.score2, holenumber: 2 },
@@ -28,6 +27,7 @@ export default Ember.Controller.extend({
       { holescore: attrs.score18, holenumber: 18 },
     ];
     const course = this.get('course');
+
     const score = this.store.createRecord('score', {
       holes: holes,
       totalPutts: attrs.numputts,
@@ -38,10 +38,21 @@ export default Ember.Controller.extend({
     score.save().then(() => {
       this.transitionToRoute(`home`);
       window.alert(`Score Saved!`);
+    }).then(() => {
+      this.setHandicap();
     });
   },
 
   courseSelected(selection) {
     Ember.set(this, `course`, selection);
+  },
+
+  setHandicap() {
+    const scores = this.get(`model.scores`);
+
+    const handicap = this.get(`handicap`).calcHandicap(scores, scores.length).toFixed(2);
+    const userhandicap = this.get(`model.golfer`);
+    userhandicap.set(`handicap`, handicap);
+    userhandicap.save();
   },
 });

@@ -1,3 +1,4 @@
+
 <div class="container">
   <div class="user-info">
     <div class="avatar">
@@ -8,7 +9,11 @@
       {{/if}}
     </div>
     <div class="user-info__details">
-      <h3 class="handicap-score">6.7</h3>
+      {{#if model.handicap}}
+      <h3 class="handicap-score">{{model.handicap}}</h3>
+      {{else}}
+      <p>Add More Scores to see your handicap!</p>
+      {{/if}}
       {{#if model.bio}}
         {{log 'yo'}}{{model.bio}}
       {{else}}

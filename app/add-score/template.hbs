@@ -3,7 +3,7 @@
     {{#simple-form onsubmit=(action addScore) as |formValues|}}
     {{#x-select action=(action (mut course))}}
       {{#x-option}}Select a Course{{/x-option}}
-      {{#each (sort-by "name" "teecolor" model) as |course|}}
+      {{#each (sort-by "name" "teecolor" model.courses) as |course|}}
         {{#x-option value=course}}{{course.name}} / {{course.teecolor}}{{/x-option}}
       {{/each}}
     {{/x-select}}

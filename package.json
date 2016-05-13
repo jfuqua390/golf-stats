@@ -52,6 +52,7 @@
     "ember-simple-auth": "1.1.0-beta.4",
     "ember-simple-auth-loopback": "1.0.2",
     "ember-simple-form": "1.0.1",
+    "ember-slack-search-input": "1.0.6",
     "ember-truth-helpers": "^1.2.0",
     "ember-with-service": "1.1.0",
     "ember-yoga-sass": "1.0.0",

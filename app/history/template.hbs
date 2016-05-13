@@ -1,17 +1,10 @@
-<button{{action calcHandicap model model.length}}>Handicap</button>
-<button{{action makeArrayOfDifferentials model}}>Make Array of Diffs</button>
-<button{{action getLowest}}>Lowest Diff</button>
-<button{{action getLowestNumbers}}>Lowest Numbers</button>
-<button{{action avgLowest}}>Average of Lowest</button>
 
-{{handicap}}
 <div class="container">
   <ul class="scores">
     {{#each model as |score|}}
     <li class="score-item">
       <div class="score-item__title">
         <div class="score-item__title__totalscore">
-          <button {{action calcHandicapDifferential score.holes "holescore" score.course.rating score.course.slope}}>CalcDifferential</button>
           {{sum-property score.holes "holescore"}}
 
         </div>
