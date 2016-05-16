@@ -8,6 +8,7 @@ export default Ember.Route.extend({
     return Ember.RSVP.hash({
       golfers: this.store.findAll(`golfer`),
       golfer: this.store.findRecord(`golfer`, userId),
+      scores: this.store.findAll(`score`),
     });
   },
 });

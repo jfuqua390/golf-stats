@@ -7,15 +7,10 @@
 .friend-box__item {
   position: relative;
   width: 30%;
-
-  &:before {
-	  display: block;
-    padding-top: 100%;
-    content: '';
-  }
+  margin: 0.2rem;
 }
 
-.content {
+.friend-box__content {
 	position:  absolute;
   top: 0;
   right: 0;
@@ -25,6 +20,8 @@
 
 .friend-avatar__img {
   width: 100%;
+  height: 3rem;
+  object-fit: cover;
 }
 
 .friend-name {

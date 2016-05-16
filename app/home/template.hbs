@@ -14,7 +14,7 @@
       <p>Add More Scores to see your handicap!</p>
       {{/if}}
       {{#if model.golfer.bio}}
-        {{log 'yo'}}{{model.golfer.bio}}
+        {{model.golfer.bio}}
       {{else}}
         {{#simple-form onsubmit=(action editBio model.golfer) as |temp|}}
           {{input value=temp.bio placeholder="Write a bit about yourself!" class="user-bio" action="editBio" on="submit"}}
@@ -38,7 +38,6 @@
       <div class="friend-box">
 
       {{#each model.golfers as |golfer|}}
-        {{log golfer.firstName}}
         {{#if golfer.avatar}}
           <div class="friend-box__item">
             {{#link-to "user-profile" golfer.id}}
@@ -51,7 +50,7 @@
         {{else}}
           <div class="friend-box__item">
             {{#link-to "user-profile" golfer.id}}
-            <div class="content">
+            <div class="friend-box__content">
               <img class="friend-avatar__img" src="http://americanmuslimconsumer.com/wp-content/uploads/2013/09/blank-user.jpg" alt="">
             </div>
             <span class="friend-name">{{golfer.firstName}}</span>
@@ -62,8 +61,34 @@
       </div>
     </div>
     <div class="scores-box">
-      Scores Box:)
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus cumque, fuga consequatur eum quidem explicabo maiores qui necessitatibus neque facere beatae quas quos, tenetur, maxime hic consectetur at. Molestias, nemo.
+      <ul class="scores-list">
+      {{#each (sort model.scores idInt) as |score|}}
+        {{log score.id}}
+        <li class="scores-list__thing">
+          <div class="scores-list__item">
+            <div class="golfer__avatar">
+              <img src="{{score.golfer.avatar}}" alt="" class="golfer-avatar__img">
+            </div>
+            <div class="scores-list__golfer-score">
+              <div class="scores-list__golfer-name">
+                {{score.golfer.firstName}} {{score.golfer.lastName}}
+              </div>
+              <p class="scores-list__scored-text"> scored a </p>
+              <div class="scores-list__score">
+                {{sum-property score.holes "holescore"}}
+              </div>
+            </div>
+            <div class="scores-list__course">
+              {{score.course.name}} <br>
+              Tee: {{score.course.teecolor}}
+            </div>
+          </div>
+          <div class="comment-box">
+            {{input value=comment placeholder="Write a comment..." class="comment-box__input"}}
+          </div>
+        </li>
+      {{/each}}
+      </ul>
     </div>
   </div>
 </div>

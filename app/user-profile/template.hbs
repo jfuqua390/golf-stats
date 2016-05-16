@@ -1,2 +1,36 @@
+<div class="container">
+  <div class="user-info">
+    <div class="avatar">
+      {{#if model.avatar}}
+        <img src={{model.avatar}} class="avatar-img">
+      {{else}}
+        <img src="http://americanmuslimconsumer.com/wp-content/uploads/2013/09/blank-user.jpg" alt="" class="avatar-img">
+      {{/if}}
+    </div>
+    <div class="user-info__details">
+      <h1>{{model.firstName}} {{model.lastName}}</h1>
+      {{#if model.handicap}}
+      <h3 class="handicap-score">{{model.handicap}}</h3>
+      {{else}}
+      <p>{{model.firstName}} has not played enough rounds to have a handicap!</p>
+      {{/if}}
+      {{#if model.bio}}
+        {{log 'yo'}}{{model.bio}}
+      {{else}}
+        <p>{{model.firstName}} has not provided a bio</p>
+      {{/if}}
+    </div>
+  </div>
+  <div class="user-options">
+    {{#link-to "history"}}<button>View All History</button>{{/link-to}}
+  </div>
+  {{outlet}}
+  <div class="main">
+    <div class="scores-box">
+      Scores Box:)
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus cumque, fuga consequatur eum quidem explicabo maiores qui necessitatibus neque facere beatae quas quos, tenetur, maxime hic consectetur at. Molestias, nemo.
+    </div>
+  </div>
+</div>
 
 {{outlet}}
