@@ -1,12 +1,14 @@
-{{#simple-form onsubmit=(action editProfile model formValues) as |formValues|}}
-  {{input type="text" placeholder="First Name" value=formValues.firstName}}
-  {{input type="text" placeholder="Last Name" value=formValues.lastName}}
-  {{input type="text" placeholder="Email" value=formValues.email}}
-  {{input type="text" placeholder="Username" value=formValues.username}}
-  {{input type="password" placeholder="Password" value=formValues.password}}
-  {{input type="url" placeholder="Photo URL" value=formValues.avatar}}
-  {{textarea placeholder="Bio" value=formValues.bio}}
-  <button>Submit</button>
-{{/simple-form}}
+<div class="container">
+  {{#simple-form class="edit-profile-form" onsubmit=(action editProfile model) as |formValues|}}
+    {{input type="text" placeholder="First Name" value=formValues.firstName}}
+    {{input type="text" placeholder="Last Name" value=formValues.lastName}}
+    {{input type="text" placeholder="Email" value=formValues.email}}
+    {{input type="text" placeholder="Username" value=formValues.username}}
+    {{input type="password" placeholder="Password" value=formValues.password}}
+    {{input type="url" placeholder="Photo URL" value=formValues.avatar}}
+    {{textarea placeholder="Bio" value=formValues.bio}}
+    <button>Submit</button>
+  {{/simple-form}}
+</div>
 
 {{outlet}}

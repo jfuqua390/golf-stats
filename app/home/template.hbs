@@ -25,7 +25,7 @@
   <div class="user-options">
     {{#link-to "add-score"}}<button>Add Score</button>{{/link-to}}
     {{#link-to "history"}}<button>View History</button>{{/link-to}}
-    {{#link-to "courses"}}<button>Courses Around Me</button>{{/link-to}}
+    {{#link-to "courses"}}<button>Courses</button>{{/link-to}}
     {{#link-to "editprofile"}}<button>Edit Profile</button>{{/link-to}}
     {{#link-to "addcourse"}} <button>Add your local course</button>{{/link-to}}
   </div>
@@ -83,7 +83,7 @@
             <div class="comment-avatar">
               <img src="{{model.golfer.avatar}}" alt="" class="comment-avatar__img">
             </div>
-            {{#simple-form class="comment-box__form" onsubmit=(action addComment score) as |comment|}}
+            {{#simple-form class="comment-box__form" onsubmit=(action addComment score) as |comment clearForm|}}
               {{input value=comment.description placeholder="Write a comment..." class="comment-box__input"}}
             {{/simple-form}}
           </div>
