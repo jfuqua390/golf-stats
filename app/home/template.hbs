@@ -32,33 +32,13 @@
   {{outlet}}
   <div class="main">
     <div class="sidebar">
-      <form {{action search searchitem on='submit'}}>
-        {{input type="text" placeholder="Search for a user..." value=searchitem}}
-      </form>
-      <div class="friend-box">
-
-      {{#each model.golfers as |golfer|}}
-        {{#if golfer.avatar}}
-          <div class="friend-box__item">
-            {{#link-to "user-profile" golfer.id}}
-            <div class="content">
-              <img class="friend-avatar__img" src="{{golfer.avatar}}" alt="">
-            </div>
-            <span class="friend-name picture-avail">{{golfer.firstName}}</span>
-            {{/link-to}}
-          </div>
-        {{else}}
-          <div class="friend-box__item">
-            {{#link-to "user-profile" golfer.id}}
-            <div class="friend-box__content">
-              <img class="friend-avatar__img" src="http://americanmuslimconsumer.com/wp-content/uploads/2013/09/blank-user.jpg" alt="">
-            </div>
-            <span class="friend-name">{{golfer.firstName}}</span>
-            {{/link-to}}
-          </div>
-        {{/if}}
-      {{/each}}
-      </div>
+        {{paper-autocomplete
+          floating=true
+          placeholder="Search for a User"
+          notFoundMessage="Oops golfer: \"%@\" doesn't exist here."
+          source=model.golfers lookupKey="firstName"
+          itemComponent="example-item" notFoundComponent="not-found"
+          }}
     </div>
     <div class="scores-box">
       <ul class="scores-list">

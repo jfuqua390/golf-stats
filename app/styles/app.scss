@@ -1,5 +1,5 @@
-@import "yoga";
-@import "variables";
+@import 'ember-paper';
+@import 'brand';
 @import "top-nav";
 @import "footer";
 @import "home-user";
@@ -47,4 +47,30 @@ a {
   width: 80%;
   margin: 2rem auto;
   box-shadow: 5px 5px 15px $brand-green, 0px 0px 30px black;
+}
+
+// placeholder
+md-input-container.md-default-theme label, md-input-container.md-default-theme .md-placeholder {
+ color: black;
+}
+
+// label after done typing
+md-input-container.md-default-theme:not(.md-input-invalid).md-input-has-value label {
+ color: $brand-green;
+}
+
+// label while typing
+md-input-container.md-default-theme:not(.md-input-invalid).md-input-focused label {
+ color: $brand-green;
+}
+
+// underline while the input is active
+md-input-container.md-default-theme:not(.md-input-invalid).md-input-focused .md-input {
+ border-color: $brand-green;
+}
+
+// input text
+md-input-container.md-default-theme .md-input {
+ color: $brand-black;
+ border-color: $brand-green;
 }

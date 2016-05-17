@@ -7,6 +7,8 @@
     "ember-qunit-notifications": "0.1.0",
     "font-awesome": "~4.5.0",
     "moment": "2.10.6",
-    "eonasdan-bootstrap-datetimepicker": "4.17.37"
+    "eonasdan-bootstrap-datetimepicker": "4.17.37",
+    "hammer.js": "^2.0.8",
+    "matchMedia": "0.2.0"
   }
 }

@@ -14,13 +14,8 @@ export default Ember.Controller.extend({
     user.save();
   },
 
-  search(term) {
-    console.log(term)
-    const users = this.store.findAll(`golfer`).then((x) => {
-      x.forEach((user) => {
-        console.log(user);
-      });
-    });
+  updateFilter() {
+    console.log(`x`)
   },
 
   addComment(score, comment) {
