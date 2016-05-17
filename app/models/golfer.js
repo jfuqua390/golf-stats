@@ -12,7 +12,6 @@ export default Model.extend({
   avatar: attr(),
   handicap: attr(),
 
-  friends: hasMany(`golfer`),
   scores: hasMany(`score`),
   comments: hasMany(`comments`),
 });

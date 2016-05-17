@@ -14,7 +14,7 @@ export default Ember.Service.extend({
   calcHandicapDifferential(arr, key, rating, slope) {
     const totalscore = this.sumScores(arr, key);
 
-    return (totalscore - rating) * (113 / slope);
+    return (totalscore - parseInt(rating)) * (113 / slope);
   },
 
   //Gives me an array of all individual differentials

@@ -2,7 +2,7 @@
 
 module.exports = function(environment) {
   var ENV = {
-    apiHost: 'http://localhost:3000',
+    apiHost: 'https://golf-api.herokuapp.com',
 
     modulePrefix: 'golf-stats',
     environment: environment,

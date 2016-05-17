@@ -1,3 +1,4 @@
+{{log model.golfer.handicap}}
 <div class="container">
   <div class="user-info">
     <div class="avatar">
@@ -62,6 +63,7 @@
               Tee: {{score.course.teecolor}}
             </div>
           </div>
+          {{#if score.comments}}
           <div class="comment-box">
             <ul class="comments">
               {{#each score.comments as |comment|}}
@@ -79,6 +81,7 @@
               {{/each}}
             </ul>
           </div>
+          {{/if}}
           <div class="comment-box">
             <div class="comment-avatar">
               <img src="{{model.golfer.avatar}}" alt="" class="comment-avatar__img">
