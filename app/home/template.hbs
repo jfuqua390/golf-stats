@@ -63,7 +63,6 @@
     <div class="scores-box">
       <ul class="scores-list">
       {{#each (sort model.scores idInt) as |score|}}
-        {{log score.id}}
         <li class="scores-list__thing">
           <div class="scores-list__item">
             <div class="golfer__avatar">
@@ -84,7 +83,29 @@
             </div>
           </div>
           <div class="comment-box">
-            {{input value=comment placeholder="Write a comment..." class="comment-box__input"}}
+            <ul class="comments">
+              {{#each score.comments as |comment|}}
+                <li class="comments-content">
+                  <div class="comment-user__avatar">
+                    <img src="{{comment.golfer.avatar}}" alt="" class="comment-user__avatar__img">
+                  </div>
+                  <div class="comment-user">
+                    {{comment.golfer.firstName}} {{comment.golfer.lastName}}:
+                  </div>
+                  <div class="comment-description">
+                    {{comment.description}}
+                  </div>
+                </li>
+              {{/each}}
+            </ul>
+          </div>
+          <div class="comment-box">
+            <div class="comment-avatar">
+              <img src="{{model.golfer.avatar}}" alt="" class="comment-avatar__img">
+            </div>
+            {{#simple-form class="comment-box__form" onsubmit=(action addComment score) as |comment|}}
+              {{input value=comment.description placeholder="Write a comment..." class="comment-box__input"}}
+            {{/simple-form}}
           </div>
         </li>
       {{/each}}

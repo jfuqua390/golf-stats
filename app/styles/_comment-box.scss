@@ -1,0 +1,28 @@
+.comment-user__avatar {
+  width: 5%;
+  margin: 0.3rem;
+
+  &__img {
+    width: 100%;
+    object-fit: cover;
+    height: 2rem;
+  }
+}
+
+.comments {
+  width: 100%;
+}
+
+.comments-content {
+  width: 100%;
+  display: flex;
+}
+
+.comment-user {
+  color: blue;
+  margin: .75rem 0.2rem;
+}
+
+.comment-description {
+  margin: .75rem 0.2rem;
+}

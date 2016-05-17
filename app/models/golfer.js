@@ -14,4 +14,5 @@ export default Model.extend({
 
   friends: hasMany(`golfer`),
   scores: hasMany(`score`),
+  comments: hasMany(`comments`),
 });
