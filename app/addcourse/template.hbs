@@ -1,6 +1,5 @@
 
-<div class="add-score-container">
-  {{#link-to "home"}}Return Home{{/link-to}}
+<div class="container">
   {{#simple-form onsubmit=(action addCourse) as |formValues|}}
   <ul class="add-score__holes">
     <li class="add-score__hole">
@@ -78,13 +77,16 @@
   </ul>
 <div class="add-score__options">
   <h5 class="add-score__optionals__title">Additional Information:</h5>
-  {{input class="add-score__optionals" placeholder="Name of Course" value=formValues.name}}
-  {{input class="add-score__optionals" placeholder="Tee Box Color" value=formValues.teecolor}}
-  {{input class="add-score__optionals" placeholder="Rating" value=formValues.rating}}
-  {{input class="add-score__optionals" placeholder="Slope" value=formValues.slope}}
-  {{input class="add-score__otpionals" placeholder="Address" value=formValues.address}}
+  {{paper-input class="add-score__optionals" label="Name of Course" value=formValues.name}}
+  {{paper-input class="add-score__optionals" label="Tee Box Color" value=formValues.teecolor}}
+  {{paper-input class="add-score__optionals" label="Rating" value=formValues.rating}}
+  {{paper-input class="add-score__optionals" label="Slope" value=formValues.slope}}
+  {{paper-input class="add-score__optionals" label="Address" value=formValues.address}}
 </div>
-  <button>Submit Course</button>
+<div class="add-score__buttons">
+  {{#paper-button raised="true"}}Submit Course{{/paper-button}}
+  {{#link-to "home"}}{{#paper-button}}Return Home{{/paper-button}}{{/link-to}}
+</div>
   {{/simple-form}}
 </div>
 
