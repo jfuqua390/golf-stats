@@ -49,18 +49,25 @@
             <div class="golfer__avatar">
               <img src="{{score.golfer.avatar}}" alt="" class="golfer-avatar__img">
             </div>
-            <div class="scores-list__golfer-score">
-              <div class="scores-list__golfer-name">
-                {{score.golfer.firstName}} {{score.golfer.lastName}}
+            <div class="scores-list__score-details">
+              <div class="scores-list__golfer-score">
+                <div class="scores-list__golfer-name">
+                  {{score.golfer.firstName}} {{score.golfer.lastName}} shot:
+                </div>
+                <div class="scores-list__score">
+                  {{sum-property score.holes "holescore"}}
+                </div>
               </div>
-              <p class="scores-list__scored-text"> scored a </p>
-              <div class="scores-list__score">
-                {{sum-property score.holes "holescore"}}
+              <div class="scores-list__course">
+                <div class="scores-list__course-name">
+                  {{score.course.name}}
+                </div>
+                <div class="scores-list__course-tee">
+                  Tee: {{score.course.teecolor}}
+                  Rating: {{score.course.rating}}
+                  Slope: {{score.course.slope}}
+                </div>
               </div>
-            </div>
-            <div class="scores-list__course">
-              {{score.course.name}} <br>
-              Tee: {{score.course.teecolor}}
             </div>
           </div>
           {{#if score.comments}}
