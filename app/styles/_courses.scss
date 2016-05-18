@@ -1,0 +1,60 @@
+.course-list {
+  padding: 1rem;
+}
+
+.course-list__item__holes {
+  display: flex;
+}
+
+.course-list__item {
+  display: flex;
+  justify-content: space-around;
+  margin: 2rem 0;
+  padding: 1rem 0;
+  box-shadow: 1px 1px 10px black;
+
+  &:first-of-type {
+    margin-top: 0;
+  }
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  &-info {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  &__holes {
+    width: 60%;
+    display: flex;
+    flex-wrap: wrap;
+
+    &-item {
+      width: calc(100% / 9 - 6px);
+      border-top: 1px solid black;
+      border-right: 1px solid black;
+      text-align: center;
+
+      &:first-of-type {
+        border-left: 1px solid black;
+      }
+
+      &:nth-last-child(-n + 9) {
+        border-bottom: 1px solid black;
+      }
+
+      &:nth-of-type(10n) {
+        border-left: 1px solid black;
+      }
+    }
+  }
+
+  &__course-name {
+    font-size: 1.6rem;
+  }
+}

@@ -1,14 +1,31 @@
 <div class="container">
-  {{log model}}
-  {{#each model as |course|}}
-    {{course.name}}
-    Tee: {{course.teecolor}}
-    Rating: {{course.rating}}
-    Slope: {{course.slope}}
-    {{#each course.holes as |hole|}}
-      {{hole.holenumber}}
-      {{hole.par}}
-    {{/each}}
-  {{/each}}
+  <ul class="course-list">
+    {{#each model as |course|}}
+      <li class="course-list__item">
+        <div class="course-list__item-info">
+          <div class="course-list__item__course-name">
+            {{course.name}}
+          </div>
+          <div class="course-list__item__course-details">
+            Tee: {{course.teecolor}}
+            Rating: {{course.rating}}
+            Slope: {{course.slope}}
+          </div>
+        </div>
+        <div class="course-list__item__holes">
+          {{#each course.holes as |hole|}}
+            <div class="course-list__item__holes-item">
+              <div class="course-list__item__holes__holenumber">
+                Hole {{hole.holenumber}}
+              </div>
+              <div class="course-list__item__holes__par">
+                Par {{hole.par}}
+              </div>
+            </div>
+          {{/each}}
+        </div>
+      </li>
+      {{/each}}
+  </ul>
 </div>
 {{outlet}}
