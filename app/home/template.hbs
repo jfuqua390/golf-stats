@@ -1,4 +1,4 @@
-{{log model.golfer.handicap}}
+
 <div class="container">
   <div class="user-info">
     <div class="avatar">
@@ -10,7 +10,7 @@
     </div>
     <div class="user-info__details">
       {{#if model.golfer.handicap}}
-      <h3 class="handicap-score">{{model.golfer.handicap}}</h3>
+      <h3 class="handicap-score">{{divide model.golfer.handicap}}</h3>
       {{else}}
       <p>Add More Scores to see your handicap!</p>
       {{/if}}
@@ -24,11 +24,11 @@
     </div>
   </div>
   <div class="user-options">
-    {{#link-to "add-score"}}<button>Add Score</button>{{/link-to}}
-    {{#link-to "history"}}<button>View History</button>{{/link-to}}
-    {{#link-to "courses"}}<button>Courses</button>{{/link-to}}
-    {{#link-to "editprofile"}}<button>Edit Profile</button>{{/link-to}}
-    {{#link-to "addcourse"}} <button>Add your local course</button>{{/link-to}}
+    {{#link-to "add-score"}}{{#paper-button raised="true"}}Add Score{{/paper-button}}{{/link-to}}
+    {{#link-to "history"}}{{#paper-button raised="true"}}View History{{/paper-button}}{{/link-to}}
+    {{#link-to "courses"}}{{#paper-button raised="true"}}Courses{{/paper-button}}{{/link-to}}
+    {{#link-to "editprofile"}}{{#paper-button raised="true"}}Edit Profile{{/paper-button}}{{/link-to}}
+    {{#link-to "addcourse"}} {{#paper-button raised="true"}}Add your local course{{/paper-button}}{{/link-to}}
   </div>
   {{outlet}}
   <div class="main">

@@ -14,7 +14,7 @@ export default Ember.Service.extend({
   calcHandicapDifferential(arr, key, rating, slope) {
     const totalscore = this.sumScores(arr, key);
 
-    return (totalscore - parseInt(rating)) * (113 / slope);
+    return (totalscore - rating) * (113 / slope);
   },
 
   //Gives me an array of all individual differentials
@@ -67,11 +67,11 @@ export default Ember.Service.extend({
     if(numRounds < 5) {
       return "Not enuf rounds";
     } else if (numRounds <= 10) {
-      return 0.96 * this.getLowest(diffarr);
+      return 100 * (0.96 * this.getLowest(diffarr));
     } else if (numRounds < 20) {
-      return 0.96 * this.avgLowest(diffarr, 5);
+      return 100 * (0.96 * this.avgLowest(diffarr, 5));
     } else {
-      return 0.96 * this.avgLowest(diffarr, 10);
+      return 100 * (0.96 * this.avgLowest(diffarr, 10));
     }
   },
 });

@@ -36,10 +36,10 @@ export default Ember.Controller.extend({
       course: course,
     });
     score.save().then(() => {
+      this.setHandicap();
+    }).then(() => {
       this.transitionToRoute(`home`);
       window.alert(`Score Saved!`);
-    }).then(() => {
-      this.setHandicap();
     });
   },
 
@@ -50,7 +50,7 @@ export default Ember.Controller.extend({
   setHandicap() {
     const scores = this.get(`model.scores`);
 
-    const handicap = this.get(`handicap`).calcHandicap(scores, scores.length).toFixed(2);
+    const handicap = Math.round(this.get(`handicap`).calcHandicap(scores, scores.content.length));
     const userhandicap = this.get(`model.golfer`);
     userhandicap.set(`handicap`, handicap);
     userhandicap.save();

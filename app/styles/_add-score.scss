@@ -11,6 +11,43 @@
   width: calc(100% / 9);
 
   &__input {
-    width: 60%;
+    width: 80%;
   }
+}
+
+.ng-enter {
+  padding: 0;
+}
+
+.ng-enter-active {
+  padding-right: 0;
+}
+
+ng-message:not(.md-char-counter), md-input-container data-ng-message:not(.md-char-counter), md-input-container x-ng-message:not(.md-char-counter), md-input-container [ng-message]:not(.md-char-counter), md-input-container [data-ng-message]:not(.md-char-counter), md-input-container [x-ng-message]:not(.md-char-counter), md-input-container .md-char-counter:not(.md-char-counter) {
+  padding-right: 0;
+}
+
+.add-score__options {
+  width: 100%;
+}
+
+.add-score__options-inputs {
+  width: 50%;
+  margin: auto;
+  display: flex;
+}
+
+.add-score__optionals {
+width: 30%;
+}
+
+.add-score__optionals__title {
+  text-align: center;
+}
+
+.add-score-dropdown {
+  margin: 1rem 0.5rem 0;
+  background: $brand-green;
+  color: $brand-white;
+  box-shadow: 1px 1px 10px black;
 }
