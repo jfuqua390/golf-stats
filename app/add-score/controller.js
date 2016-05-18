@@ -3,6 +3,13 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
   session: Ember.inject.service(),
   handicap: Ember.inject.service(),
+  scoreValidation: {
+  'errorMessage': 'Numbers only',
+    'isError': (inputValue) => {
+      var scorePattern = /^[0-9]{2,4}$/;
+      return !scorePattern.test(inputValue);
+    }
+  },
 
 
   addScore(attrs) {

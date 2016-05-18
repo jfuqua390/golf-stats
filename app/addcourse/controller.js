@@ -1,6 +1,30 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+  scoreValidation: {
+  'errorMessage': 'Numbers only',
+    'isError': (inputValue) => {
+      var scorePattern = /^[0-9]{0,3}$/;
+      return !scorePattern.test(inputValue);
+    }
+  },
+
+  ratingValidation: {
+  'errorMessage': 'Please input rating using proper format (e.g. 74.2)',
+    'isError': (inputValue) => {
+      var scorePattern = /^\d{1,2}(\.\d)?$/;
+      return !scorePattern.test(inputValue);
+    }
+  },
+
+  slopeValidation: {
+  'errorMessage': 'Please use proper format for slope (e.g. 120, 127)',
+    'isError': (inputValue) => {
+      var scorePattern = /^[0-9]{0,3}$/;
+      return !scorePattern.test(inputValue);
+    }
+  },
+
   addCourse(attrs) {
     const holes = [
       { par: attrs.score1, holenumber: 1 },
