@@ -17,6 +17,7 @@ Router.map(function() {
   this.route('courses');
   this.route('add-score');
   this.route('user-profile', { path: `/:id`} );
+  this.route('guest', { path: `/`});
 });
 
 export default Router;

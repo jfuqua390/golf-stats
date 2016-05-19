@@ -30,10 +30,20 @@
       </div>
 <div class="score-item__right-container">
   <div class="score-item__course">
-    Course: {{score.course.name}}
-    Tee: {{score.course.teecolor}}
-    Rating: {{score.course.rating}}
-    Slope: {{score.course.slope}}
+    <div class="score-item__course-name">
+      Course: {{score.course.name}}
+    </div>
+    <ul class="score-item__course-info">
+      <li class="score-item__course-info__item">
+        Tee: {{score.course.teecolor}}
+      </li>
+      <li class="score-item__course-info__item">
+        Rating: {{score.course.rating}}
+      </li>
+      <li class="score-item__course-info__item">
+        Slope: {{score.course.slope}}
+      </li>
+    </ul>
   </div>
   <ul class="score-item__holes">
     {{#each score.holes as |hole|}}

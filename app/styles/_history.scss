@@ -21,6 +21,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 
   &__totalscore {
     font-size: 32px;
@@ -45,6 +46,7 @@
   width: 80%;
   display: flex;
   flex-wrap: wrap;
+  margin: auto;
 }
 
 .score-item__hole {
@@ -57,4 +59,17 @@
 
 .score-delete-button {
   position: absolute;
+}
+
+.score-item__course {
+  display: flex;
+  justify-content: space-around;
+
+  &-info {
+    display: flex;
+  }
+}
+
+.score-item__course-info__item {
+  margin: 0 1rem;
 }
