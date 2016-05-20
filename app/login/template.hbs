@@ -1,9 +1,11 @@
 <div class="container">
-  Enter Login Information Below
+  <h3 class="login-title">
+    Enter Login Information Below
+  </h3>
   {{#simple-form onsubmit=(action login) as |formValues|}}
-    {{input type="text" placeholder="Email" value=formValues.email}}
-    {{input type="password" placeholder="Password" value=formValues.password}}
-    <button>Submit</button>
+    {{paper-input type="text" placeholder="Email" value=formValues.email}}
+    {{paper-input type="password" placeholder="Password" value=formValues.password}}
+    {{#paper-button}}Submit{{/paper-button}}
   {{/simple-form}}
 </div>
 

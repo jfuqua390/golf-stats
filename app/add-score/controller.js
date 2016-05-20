@@ -6,7 +6,7 @@ export default Ember.Controller.extend({
   scoreValidation: {
   'errorMessage': 'Numbers only',
     'isError': (inputValue) => {
-      var scorePattern = /^[0-9]{2,4}$/;
+      var scorePattern = /^[0-9]{0,4}$/;
       return !scorePattern.test(inputValue);
     }
   },

@@ -10,7 +10,7 @@
     <div class="user-info__details">
       <h1>{{model.golfer.firstName}} {{model.golfer.lastName}}</h1>
       {{#if model.golfer.handicap}}
-      <h3 class="handicap-score">{{model.golfer.handicap}}</h3>
+      <h3 class="handicap-score">{{divide model.golfer.handicap}}</h3>
       {{else}}
       <p>{{model.golfer.firstName}} has not played enough rounds to have a handicap!</p>
       {{/if}}

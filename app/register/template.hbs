@@ -1,12 +1,14 @@
 <div class="container">
-  Enter Details Below
+  <h3 class="register-title">
+    Enter Details Below
+  </h3>
   {{#simple-form onsubmit=(action createUser) as |formValues|}}
-    {{input type="text" placeholder="First Name" value=formValues.firstName}}
-    {{input type="text" placeholder="Last Name" value=formValues.lastName}}
-    {{input type="text" placeholder="Email" value=formValues.email}}
-    {{input type="text" placeholder="Username" value=formValues.username}}
-    {{input type="password" placeholder="Password" value=formValues.password}}
-    <button>Submit</button>
+    {{paper-input type="text" label="First Name" value=formValues.firstName}}
+    {{paper-input type="text" label="Last Name" value=formValues.lastName}}
+    {{paper-input type="text" label="Email" value=formValues.email}}
+    {{paper-input type="text" label="Username" value=formValues.username}}
+    {{paper-input type="password" label="Password" value=formValues.password}}
+    {{#paper-button raised=true}}Submit{{/paper-button}}
   {{/simple-form}}
 </div>
 {{outlet}}

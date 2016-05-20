@@ -13,6 +13,7 @@ $base-background-color: rgba(0, 0, 0, 0.7);
 @import "edit-profile";
 @import "courses";
 @import "add-course";
+@import "guest-home";
 
 
 html {
@@ -84,4 +85,38 @@ md-input-container.md-default-theme:not(.md-input-invalid).md-input-focused .md-
 md-input-container.md-default-theme .md-input {
  color: $brand-black;
  border-color: $brand-green;
+}
+
+@media (max-width: 500px) {
+  .no-show-phone {
+    display: none;
+  }
+
+  .top-nav__row {
+    width: 100%;
+  }
+
+  .top-nav__right {
+    width: 21%;
+    margin-right: 0.5rem;
+  }
+
+  .handicap-score {
+    font-size: 1.2rem;
+  }
+
+  .user-bio {
+    font-size: .7rem;
+  }
+
+  .user-options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+  }
+
+  .main {
+    margin-top: 0;
+  }
 }

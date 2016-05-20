@@ -31,6 +31,10 @@
   }
 }
 
+.user-options {
+  display: flex;
+}
+
 .handicap-score {
   font-size: 5rem;
 }
@@ -44,4 +48,8 @@
 .sidebar {
   width: 10%;
   margin: 0.5rem;
+}
+
+.search-input {
+  width: 20%;
 }

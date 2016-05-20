@@ -1,0 +1,32 @@
+.guest-home-container-title {
+  margin: 1rem 0.5rem;
+  padding-top: 1rem;
+  font-size: 2rem;
+  text-align: center;
+  color: $brand-green;
+}
+
+.site-features {
+  margin-left: 0.5rem;
+  font-size: 1.8rem;
+
+  &-item {
+    text-align: center;
+    margin: 2.5rem 0;
+
+    &:last-of-type {
+      padding-bottom: 2.5rem;
+    }
+  }
+}
+
+
+
+.gif-container {
+  width: 50%;
+  margin: auto;
+}
+
+.site-features-gif {
+  width: 100%;
+}

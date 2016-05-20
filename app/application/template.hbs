@@ -8,21 +8,25 @@
       {{fa-icon "trademark" class="tm"}}
     </div>
     <div class="top-nav__right">
-      {{#link-to "home" class="top-nav__right__link"}}
-        {{fa-icon "home"}}
-      {{/link-to}}
-      <span class="top-nav__right__separator"> | </span>
       {{#if session.isAuthenticated}}
-        <div class="top-nav__right__link">
+        {{#link-to "home" class="top-nav__right__link home-btn"}}
+        {{fa-icon "home"}}
+        {{/link-to}}
+        <span class="top-nav__right__separator"> | </span>
+        <div class="top-nav__right__link no-show-phone">
           {{session.data.authenticated.user.first-name}}
         </div>
-        <div class="top-nav__right__link">
+        <div class="top-nav__right__link no-show-phone">
           {{session.data.authenticated.user.last-name}}
         </div>
         <div class="top-nav__right__link">
           {{#link-to "logout" class="logout"}}Logout{{/link-to}}
         </div>
       {{else}}
+        {{#link-to "guest" class="top-nav__right__link home-btn"}}
+          {{fa-icon "home"}}
+        {{/link-to}}
+        <span class="top-nav__right__separator"> | </span>
         {{#link-to "register" class="top-nav__right__link"}}
         Register
         {{/link-to}}
