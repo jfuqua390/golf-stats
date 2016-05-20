@@ -1,9 +1,12 @@
 <div class="container">
-  <h4>Enter your updated information below:</h4>
+  <h4 class="edit-title">Enter your updated information below:</h4>
   {{#simple-form class="edit-profile-form" onsubmit=(action editProfile model) as |formValues|}}
-    {{input type="url" placeholder="Photo URL" value=formValues.avatar}}
-    {{textarea placeholder="Bio" value=formValues.bio}}
-    {{#paper-button raised="true"}}Submit{{/paper-button}}
+    {{paper-input type="url" label="Enter a photo URL for your profile pic" value=formValues.avatar}}
+    {{paper-input label="Edit your bio" value=formValues.bio}}
+    <div class="edit-btns">
+      {{#paper-button raised="true" class="edit-btn"}}Submit{{/paper-button}}
+      {{#link-to "home"}}{{#paper-button class="edit-btn"}}Cancel{{/paper-button}}{{/link-to}}
+    </div>
   {{/simple-form}}
 </div>
 

@@ -1,5 +1,8 @@
 
 <div class="container">
+  <div class="history-btns">
+    {{#link-to "home"}}{{#paper-button class="back-btn"raised=true}}Return Home{{/paper-button}}{{/link-to}}
+  </div>
   <ul class="scores">
     {{#each model as |score|}}
     <li class="score-item">

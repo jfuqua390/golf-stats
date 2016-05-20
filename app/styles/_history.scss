@@ -1,5 +1,5 @@
 .scores {
-  margin: 2rem 0;
+  margin: 0.6rem 0;
 }
 
 .score-item {
@@ -8,7 +8,7 @@
   margin: 2rem 1rem;
 
   &:first-of-type {
-    padding-top: 1rem;
+    margin: -0.6rem 1rem 1rem;
   }
 
   &:last-of-type {
@@ -22,6 +22,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  color: $brand-green;
 
   &__totalscore {
     font-size: 32px;
@@ -32,6 +33,7 @@
   display: flex;
   width: 100%;
   align-items: center;
+  color: $brand-black;
 }
 
 .optionalstats__item {
@@ -64,6 +66,8 @@
 .score-item__course {
   display: flex;
   justify-content: space-around;
+  color: $brand-green;
+  font-weight: bold;
 
   &-info {
     display: flex;
@@ -72,4 +76,15 @@
 
 .score-item__course-info__item {
   margin: 0 1rem;
+}
+
+.history-btns {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.back-btn {
+  margin-left: 1rem;
+  margin-top: 1rem;
 }

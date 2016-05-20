@@ -2,10 +2,12 @@
   <h3 class="login-title">
     Enter Login Information Below
   </h3>
-  {{#simple-form onsubmit=(action login) as |formValues|}}
+  {{#simple-form class="login-form" onsubmit=(action login) as |formValues|}}
     {{paper-input type="text" placeholder="Email" value=formValues.email}}
     {{paper-input type="password" placeholder="Password" value=formValues.password}}
-    {{#paper-button}}Submit{{/paper-button}}
+    <div class="login-buttons">
+      {{#paper-button raised="true"}}Submit{{/paper-button}}
+    </div>
   {{/simple-form}}
 </div>
 

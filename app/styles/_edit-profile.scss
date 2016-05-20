@@ -1,6 +1,21 @@
 .edit-profile-form {
 display: flex;
 flex-direction: column;
-margin: 1rem;
 padding: 1rem;
+width: 50%;
+margin: auto;
+}
+
+.edit-btns {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.edit-btn {
+  width: 30%;
+}
+
+.edit-title {
+  text-align: center;
 }

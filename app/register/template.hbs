@@ -2,13 +2,15 @@
   <h3 class="register-title">
     Enter Details Below
   </h3>
-  {{#simple-form onsubmit=(action createUser) as |formValues|}}
+  {{#simple-form class="register-form" onsubmit=(action createUser) as |formValues|}}
     {{paper-input type="text" label="First Name" value=formValues.firstName}}
     {{paper-input type="text" label="Last Name" value=formValues.lastName}}
     {{paper-input type="text" label="Email" value=formValues.email}}
     {{paper-input type="text" label="Username" value=formValues.username}}
     {{paper-input type="password" label="Password" value=formValues.password}}
-    {{#paper-button raised=true}}Submit{{/paper-button}}
+    <div class="register-buttons">
+      {{#paper-button class="submit-btn" raised=true}}Submit{{/paper-button}}
+    </div>
   {{/simple-form}}
 </div>
 {{outlet}}

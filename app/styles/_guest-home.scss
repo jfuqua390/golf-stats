@@ -24,9 +24,11 @@
 
 .gif-container {
   width: 50%;
-  margin: auto;
+  margin: 0.6rem auto;
 }
 
 .site-features-gif {
   width: 100%;
+  box-shadow: 1px 1px 10px black;
+  border-radius: 15px;
 }
